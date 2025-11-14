@@ -61,12 +61,12 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
                 >
                     <img 
                     src={item.image} 
-                    alt={item.name} 
+                    alt={item.title} 
                     className="w-20 h-20 object-cover rounded" 
                     />
 
                     <div className="flex-1">
-                     <h4 className="font-semibold text-sm line-clamp-2">{item.name}</h4>
+                     <h4 className="font-semibold text-sm line-clamp-2">{item.title}</h4>
                      <p className="text-blue-600 font-bold mt-1">${item.price}</p>
 
                      <div className="flex items-center justify-between mt-2">

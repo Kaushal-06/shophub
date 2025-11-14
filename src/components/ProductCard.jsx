@@ -5,36 +5,57 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
   return (
     <div>
       <div className="bg-white shadow-lg rounded-xl flex flex-col relative w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2">
-        
-        <span className="absolute left-2 top-2 rounded-full bg-blue-500 text-white font-semibold text-xs py-1 px-3">{prd.category}</span>
-         
-        <button 
-        onClick={() => addItemToWishlist(prd.name)}
-        className="absolute right-2 top-2 bg-white shadow-2xl rounded-full p-2">
-        <Heart className={`w-4 h-4  ${wishlist.includes(prd.name) ? 'text-red-500 fill-red-500' : 'text-gray-600'}`}/>
-        </button> 
+        <span className="absolute left-2 top-2 rounded-full bg-blue-500 text-white font-semibold text-xs py-1 px-3">
+          {prd.category}
+        </span>
 
-        <img src={prd.image} alt={prd.name} className="w-full h-60 rounded-t-xl" />
+        <button
+          onClick={() => addItemToWishlist(prd.title)}
+          className="absolute right-2 top-2 bg-white shadow-2xl rounded-full p-2"
+        >
+          <Heart
+            className={`w-4 h-4  ${
+              wishlist.includes(prd.title)
+                ? "text-red-500 fill-red-500"
+                : "text-gray-600"
+            }`}
+          />
+        </button>
+
+        <div className="flex items-center justify-center w-full mt-2">
+          <img
+            src={prd.image}
+            alt={prd.title}
+            className="w-50 h-50 rounded-t-xl"
+          />
+        </div>
 
         <div className="py-2 px-3 flex flex-col gap-2">
-          <h2 className="text-xl font-semibold tracking-wide">{prd.name}</h2>
+          <h2 className="text-xl font-medium tracking-wide">
+            {prd.title.length > 20
+              ? prd.title.substring(0, 25) + "..."
+              : prd.title}
+          </h2>
 
           <div className="flex items-center">
-             <div className="flex items-center gap-1">
-               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-               <span className="text-sm font-semibold">{prd.rating}</span>
-             </div>
+            <div className="flex items-center gap-1">
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <span className="text-sm font-semibold">{prd.rating.rate}</span>
+            </div>
 
-             <p className="text-sm text-gray-600 ml-2">({prd.reviews} reviews)</p>   
+            <p className="text-sm text-gray-600 ml-2">
+              ({prd.rating.count} reviews)
+            </p>
           </div>
 
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl text-blue-600 ">${prd.price}</h1>
 
-            <button 
-            onClick={() => addItemToCart(prd)}
-            className="rounded-lg bg-gradient-to-r from-blue-400 via-indigo-600 to-purple-600 flex items-center py-2 px-4 text-white text-md font-semobild cursor-pointer">
-                Add to Cart
+            <button
+              onClick={() => addItemToCart(prd)}
+              className="rounded-lg bg-gradient-to-r from-blue-400 via-indigo-600 to-purple-600 flex items-center py-2 px-4 text-white text-md font-semobild cursor-pointer"
+            >
+              Add to Cart
             </button>
           </div>
         </div>
