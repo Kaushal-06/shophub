@@ -60,7 +60,7 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
                 className="flex gap-3 bg-gray-50 p-3 rounded-lg hover:shadow-md transition"
                 >
                     <img 
-                    src={item.image} 
+                    src={item.image[0]} 
                     alt={item.title} 
                     className="w-20 h-20 object-cover rounded" 
                     />
