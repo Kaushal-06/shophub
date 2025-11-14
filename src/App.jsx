@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import FilterCard from "./components/FilterCard";
 import ProductCard from "./components/ProductCard";
 import CartSidebar from "./components/CartSidebar";
+import Toast from "./components/Toast";
 
 const products = [
   {
@@ -266,6 +267,7 @@ const App = () => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [message, setMessage] = useState('')
 
   const categories = [
     "all",
@@ -319,6 +321,8 @@ const App = () => {
     } else {
       setCart((prev) => [...prev, { ...prd, qty: 1 }]);
     }
+
+    setMessage(`${prd.name} added to cart!`)
   };
 
   const removeItem = (id) => {
@@ -340,6 +344,10 @@ const App = () => {
   const handleCartClick = () => setIsCartOpen(true);
 
   const onClose = () => setIsCartOpen(false);
+
+  const onToastClose = () => {
+    setMessage('')
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -375,6 +383,15 @@ const App = () => {
         removeItem={removeItem}
         updateQty={updateQty}
       />
+
+      {
+        message && (
+          <Toast
+          message={message}
+          onClose={onToastClose}
+          />
+        )
+      }
     </div>
   );
 };
