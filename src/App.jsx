@@ -392,7 +392,7 @@ const products = [
 
 const App = () => {
   const [selectedCategories, setSelectedCategories] = useState("all");
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState(products1);
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
