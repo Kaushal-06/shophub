@@ -1,0 +1,46 @@
+import { Heart, Star } from "lucide-react";
+import React from "react";
+
+const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
+  return (
+    <div>
+      <div className="bg-white shadow-lg rounded-xl flex flex-col relative w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2">
+        
+        <span className="absolute left-2 top-2 rounded-full bg-blue-500 text-white font-semibold text-xs py-1 px-3">{prd.category}</span>
+         
+        <button 
+        onClick={() => addItemToWishlist(prd.name)}
+        className="absolute right-2 top-2 bg-white shadow-2xl rounded-full p-2">
+        <Heart className={`w-4 h-4  ${wishlist.includes(prd.name) ? 'text-red-500 fill-red-500' : 'text-gray-600'}`}/>
+        </button> 
+
+        <img src={prd.image} alt={prd.name} className="w-full h-60 rounded-t-xl" />
+
+        <div className="py-2 px-3 flex flex-col gap-2">
+          <h2 className="text-xl font-semibold tracking-wide">{prd.name}</h2>
+
+          <div className="flex items-center">
+             <div className="flex items-center gap-1">
+               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+               <span className="text-sm font-semibold">{prd.rating}</span>
+             </div>
+
+             <p className="text-sm text-gray-600 ml-2">({prd.reviews} reviews)</p>   
+          </div>
+
+          <div className="flex items-center justify-between mb-4">
+            <h1 className="text-2xl text-blue-600 ">${prd.price}</h1>
+
+            <button 
+            onClick={() => addItemToCart(prd)}
+            className="rounded-lg bg-gradient-to-r from-blue-400 via-indigo-600 to-purple-600 flex items-center py-2 px-4 text-white text-md font-semobild cursor-pointer">
+                Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
