@@ -3,11 +3,11 @@ import { useEffect, useState } from "react"
 const ProductImageSlider = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    // change image every 2 seconds (200ms)
+    // change image every 3 seconds (300ms)
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prev) => prev === images.length - 1 ? 0 : prev + 1)
-        },2000)
+        },3000)
 
         return () => clearInterval(intervalId)
 

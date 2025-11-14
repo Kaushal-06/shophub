@@ -627,11 +627,11 @@ import Toast from "./components/Toast";
 
 const products = [
   {
-    "id":30,
+    "id":1,
     "title":"Wedding Ring In 18K Yellow Gold (2.00mm)",
     "price":5.99,
     "description":"Nourishing lip balm to protect and hydrate lips.",
-    "category":"cosmetics",
+    "category":"jewellery",
     "image":[
       "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/Orbitvu/FineJewelry/606820/606820_Y_1_1600X1600.jpg",
       "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/LifeStyle/FineJewelry/606820/606820_Y_1_1600X1600.jpg",
@@ -640,7 +640,35 @@ const products = [
     ],
     "rating":{"rate":4.7,"count":105},
     "qty":0
-  }  
+  },  
+  {
+    "id":2,
+    "title":"Inside Out Round Hoops, 1/2 Inch Diameter In 14K Yellow Gold (1/4 Ct. tw. - H-I / SI1-SI2)",
+    "price":1027,
+    "description":"Nourishing lip balm to protect and hydrate lips.",
+    "category":"jewellery",
+    "image":[
+      "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/Orbitvu/DiamondBasics/806827/806827_RND_0025CT_Y_1_1600X1600.jpg",
+      "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/LifeStyleV4/DiamondBasics/806827/806827_RND_0025CT_Y_1_1600X1600.jpg",
+      "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/Orbitvu/DiamondBasics/806827/806827_RND_0025CT_Y_2_1600X1600.jpg"
+    ],
+    "rating":{"rate":4.7,"count":105},
+    "qty":0
+  },  
+  {
+    "id":3,
+    "title":"Lab-Grown Diamond Initial R Pendant Necklace In 14K Yellow Gold",
+    "price":768,
+    "description":"Nourishing lip balm to protect and hydrate lips.",
+    "category":"jewellery",
+    "image":[
+      "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/Orbitvu/FineJewelry/85712887Y14L/85712887Y14L_SKU_1_1600X1600.jpg",
+      "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/LifeStyle/FineJewelry/85712887Y14L/85712887Y14L_SKU_1_1600X1600.jpg",
+      // "https://ion.bluenile.com/sets/Jewelry/Photoshoot/Bluenile/Orbitvu/DiamondBasics/806827/806827_RND_0025CT_Y_2_1600X1600.jpg"
+    ],
+    "rating":{"rate":4.7,"count":105},
+    "qty":0
+  },  
 ]
 
 
