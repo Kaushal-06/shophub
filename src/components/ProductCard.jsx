@@ -1,5 +1,6 @@
 import { Heart, Star } from "lucide-react";
 import React from "react";
+import ProductImageSlider from "./ProductImageSlider";
 
 const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
   return (
@@ -22,13 +23,14 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
           />
         </button>
 
-        <div className="flex items-center justify-center w-full mt-2">
+        <ProductImageSlider images={prd.image} />
+        {/* <div className="flex items-center justify-center w-full mt-2">
           <img
-            src={prd.image}
+            src={prd.image[0]}
             alt={prd.title}
-            className="w-50 h-50 rounded-t-xl"
+            className="w-auto h-1/2 rounded-t-xl"
           />
-        </div>
+        </div> */}
 
         <div className="py-2 px-3 flex flex-col gap-2">
           <h2 className="text-xl font-medium tracking-wide">
