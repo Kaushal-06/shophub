@@ -749,7 +749,7 @@ const App = () => {
           selectedCategories={selectedCategories}
           handleCategoriesChange={handleCategoriesChange}
         />
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-4">
+        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 mb-4">
           {filteredProducts.map((prd) => (
             <ProductCard
               key={prd.id}
