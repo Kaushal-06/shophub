@@ -1,8 +1,17 @@
 import { Heart, Star } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import ProductImageSlider from "./ProductImageSlider";
+import ProductModal from "./ProductDetailModal";
 
 const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
+  const [modal, setModal] = useState(false)
+  const [selectProduct,setSelectedProduct] = useState({})
+
+  const handleImageClick = (prd) => {
+    setSelectedProduct(prd)
+    setModal(true)
+  }
+    
   return (
     <div>
       <div className="bg-white shadow-lg rounded-xl flex flex-col relative w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2">
@@ -23,7 +32,9 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
           />
         </button>
 
-        <ProductImageSlider images={prd.image} />
+        <div onClick={() => handleImageClick(prd)}>
+           <ProductImageSlider images={prd.image} />
+        </div>
         {/* <div className="flex items-center justify-center w-full mt-2">
           <img
             src={prd.image[0]}
@@ -69,6 +80,8 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
           </div>
         </div>
       </div>
+
+      <ProductModal isOpen={modal} onClose={() => setModal(false)} prd={selectProduct} />
     </div>
   );
 };

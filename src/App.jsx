@@ -343,14 +343,305 @@ const products1 = [
   },
 ];
 
+// const products = [
+//   {
+//     id: 1,
+//     brand: "Blueline",
+//     title: "Wedding Ring In 18K Yellow Gold (2.00mm)",
+//     price: 32500,
+//     description: "Nourishing lip balm to protect and hydrate lips.",
+//     category: "jewelery",
+//     image: [
+//       "/assets/prd-img/ring/1.jpg",
+//       "/assets/prd-img/ring/2.jpg",
+//       "/assets/prd-img/ring/3.jpg",
+//       "/assets/prd-img/ring/4.jpg",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 2,
+//     brand: "Blueline",
+//     title:
+//       "Inside Out Round Hoops, 1/2 Inch Diameter In 14K Yellow Gold (1/4 Ct. tw. - H-I / SI1-SI2)",
+//     price: 22450,
+//     description: "Nourishing lip balm to protect and hydrate lips.",
+//     category: "jewelery",
+//     image: [
+//       "/assets/prd-img/earring/1.jpg",
+//       "/assets/prd-img/earring/2.jpg",
+//       "/assets/prd-img/earring/3.jpg",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 3,
+//     brand: "Blueline",
+//     title: "Lab-Grown Diamond Initial R Pendant Necklace In 14K Yellow Gold",
+//     price: 65999,
+//     description: "Nourishing lip balm to protect and hydrate lips.",
+//     category: "jewelery",
+//     image: ["/assets/prd-img/necklace/1.jpg", "/assets/prd-img/necklace/2.jpg"],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 4,
+//     brand: "MAC",
+//     title: "M·A·Cximal Silky Matte Lipstick",
+//     price: 2600,
+//     description:
+//       "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+//     category: "cosmetics",
+//     image: [
+//       "/assets/prd-img/lipstick/mac1.avif",
+//       "/assets/prd-img/lipstick/mac2.avif",
+//       "/assets/prd-img/lipstick/mac3.webp",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 5,
+//     brand: "MAC",
+//     title: "Lady Danger,M·A·Cximal Silky Matte Lipstick",
+//     price: 2600,
+//     description:
+//       "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+//     category: "cosmetics",
+//     image: [
+//       "/assets/prd-img/lipstick/lady-danger1.avif",
+//       "/assets/prd-img/lipstick/lady-danger2.avif",
+//       "/assets/prd-img/lipstick/lady-danger3.webp",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 6,
+//     brand: "MAC",
+//     title: "Russian Red,M·A·Cximal Silky Matte Lipstick",
+//     price: 2600,
+//     description:
+//       "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+//     category: "cosmetics",
+//     image: [
+//       "/assets/prd-img/lipstick/russian-red1.avif",
+//       "/assets/prd-img/lipstick/russian-red2.avif",
+//       "/assets/prd-img/lipstick/russian-red3.webp",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 7,
+//     brand: "FROGS",
+//     title:
+//       "MACGROW - Light Blue Denim Straight Fit Women's Jeans ( Pack of 1 )",
+//     price: 443,
+//     description:
+//       "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+//     category: "women's clothing",
+//     image: [
+//       "/assets/prd-img/women-jean/blue1.webp",
+//       "/assets/prd-img/women-jean/blue2.webp",
+//       "/assets/prd-img/women-jean/blue3.webp",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 8,
+//     brand: "Bewkoof",
+//     title: "BONDY Women's Straight Fit Mid-Rise Jeans ( Black )",
+//     price: 443,
+//     description:
+//       "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+//     category: "women's clothing",
+//     image: [
+//       "/assets/prd-img/women-jean/black1.webp",
+//       "/assets/prd-img/women-jean/black2.webp",
+//       "/assets/prd-img/women-jean/black3.webp",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 9,
+//     brand: "Bewkoof",
+//     title: "9x denims Women's Regular Fit Mid-Rise Jeans ( Cream )",
+//     price: 670,
+//     description:
+//       "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+//     category: "women's clothing",
+//     image: [
+//       "/assets/prd-img/women-jean/cream1.webp",
+//       "/assets/prd-img/women-jean/cream2.webp",
+//       "/assets/prd-img/women-jean/cream3.webp",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 10,
+//     brand: "Aurelia",
+//     title: "Navy Schiffli Short Kurti with Pintucks",
+//     price: 883,
+//     description: "Navy Schiffli Short Kurti with Pintucks",
+//     category: "women's clothing",
+//     image: [
+//       "/assets/prd-img/women-kurti/blue1.avif",
+//       "/assets/prd-img/women-kurti/blue2.avif",
+//       "/assets/prd-img/women-kurti/blue3.avif",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 11,
+//     brand: "Janasya",
+//     title:
+//       "Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
+//     price: 1995,
+//     description:
+//       "Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
+//     category: "women's clothing",
+//     image: [
+//       "/assets/prd-img/women-kurti/yellow1.avif",
+//       "/assets/prd-img/women-kurti/yellow2.avif",
+//       "/assets/prd-img/women-kurti/yellow3.avif",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 12,
+//     brand: "Brownverse",
+//     title: "Pure Cotton Women Off White Embroidered Kashmiri Kurti",
+//     price: 1995,
+//     description: "Pure Cotton Women Off White Embroidered Kashmiri Kurti.",
+//     category: "women's clothing",
+//     image: [
+//       "/assets/prd-img/women-kurti/cream1.avif",
+//       "/assets/prd-img/women-kurti/cream2.avif",
+//       "/assets/prd-img/women-kurti/cream3.avif",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 13,
+//     brand: "Style Quotient",
+//     title: "Men Olive Relaxed Fit Mid Rise Cargos",
+//     price: 1395,
+//     description: "Men Olive Relaxed Fit Mid Rise Cargos",
+//     category: "men's clothing",
+//     image: [
+//       "/assets/prd-img/men-jeans/green-cargo1.avif",
+//       "/assets/prd-img/men-jeans/green-cargo2.avif",
+//       "/assets/prd-img/men-jeans/green-cargo3.avif",
+//     ],
+//     rating: { rate: 4.7, count: 105 },
+//     qty: 0,
+//   },
+//   {
+//     id: 14,
+//     brand: "Snitch",
+//     title: "Blue Denim Loose Casual Jeans",
+//     price: 1595,
+//     description: "Blue Denim Loose Casual Jeans",
+//     category: "men's clothing",
+//     image: [
+//       "/assets/prd-img/men-jeans/blue1.avif",
+//       "/assets/prd-img/men-jeans/blue2.avif",
+//       "/assets/prd-img/men-jeans/blue3.avif",
+//     ],
+//     rating: { rate: 4.1, count: 545 },
+//     qty: 0,
+//   },
+//   {
+//     id: 15,
+//     brand: "FREAKINS",
+//     title: "Men Spruce Black Wide Jeans",
+//     price: 1899,
+//     description: "Men Spruce Black Wide Jeans",
+//     category: "men's clothing",
+//     image: [
+//       "/assets/prd-img/men-jeans/black1.avif",
+//       "/assets/prd-img/men-jeans/black2.avif",
+//       "/assets/prd-img/men-jeans/black3.avif",
+//     ],
+//     rating: { rate: 3.9, count: 95 },
+//     qty: 0,
+//   },
+//   {
+//     id: 16,
+//     brand: "American Eagle",
+//     title: "Men Red Super Soft Graphic Hoodie",
+//     price: 1843,
+//     description: "Men Red Super Soft Graphic Hoodie",
+//     category: "men's clothing",
+//     image: [
+//       "/assets/prd-img/men-hoodie/red1.avif",
+//       "/assets/prd-img/men-hoodie/red2.avif",
+//       "/assets/prd-img/men-hoodie/red3.avif",
+//     ],
+//     rating: { rate: 4, count: 215 },
+//     qty: 0,
+//   },
+//   {
+//     id: 17,
+//     brand: "POLO RALPH LAUREN",
+//     title: "RALPH LAUREN Fleece Hoodie",
+//     price: 14843,
+//     description: "RALPH LAUREN Fleece Hoodie",
+//     category: "men's clothing",
+//     image: [
+//       "/assets/prd-img/men-hoodie/black1.avif",
+//       "/assets/prd-img/men-hoodie/black2.avif",
+//       "/assets/prd-img/men-hoodie/black3.avif",
+//     ],
+//     rating: { rate: 4.3, count: 76 },
+//     qty: 0,
+//   },
+//   {
+//     id: 18,
+//     brand: "ALLSAINTS",
+//     title: "Future Hoodie",
+//     price: 31245,
+//     description: "Future Hoodie",
+//     category: "men's clothing",
+//     image: [
+//       "/assets/prd-img/men-hoodie/cream1.avif",
+//       "/assets/prd-img/men-hoodie/cream2.avif",
+//       "/assets/prd-img/men-hoodie/cream3.avif",
+//     ],
+//     rating: { rate: 4.8, count: 14 },
+//     qty: 0,
+//   },
+// ];
+
+
+const formatINR = (price) =>
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 0,
+  }).format(price);
+
 const products = [
   {
     id: 1,
     brand: "Blueline",
     title: "Wedding Ring In 18K Yellow Gold (2.00mm)",
-    price: 32500,
+    price: formatINR(32500),
+    discount_percent: 5,
+    discount_price: formatINR(Math.round(32500 - 32500 * 0.05)),
     description: "Nourishing lip balm to protect and hydrate lips.",
     category: "jewelery",
+    colors: ["#FFD700", "#E6BE8A", "#D4AF37"], // gold shades
     image: [
       "/assets/prd-img/ring/1.jpg",
       "/assets/prd-img/ring/2.jpg",
@@ -360,14 +651,17 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 2,
     brand: "Blueline",
-    title:
-      "Inside Out Round Hoops, 1/2 Inch Diameter In 14K Yellow Gold (1/4 Ct. tw. - H-I / SI1-SI2)",
-    price: 22450,
+    title: "Inside Out Round Hoops, 1/2 Inch Diameter In 14K Yellow Gold",
+    price: formatINR(22450),
+    discount_percent: 5,
+    discount_price: formatINR(Math.round(22450 - 22450 * 0.05)),
     description: "Nourishing lip balm to protect and hydrate lips.",
     category: "jewelery",
+    colors: ["#FFD700", "#F5DEB3"],
     image: [
       "/assets/prd-img/earring/1.jpg",
       "/assets/prd-img/earring/2.jpg",
@@ -376,25 +670,35 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 3,
     brand: "Blueline",
-    title: "Lab-Grown Diamond Initial R Pendant Necklace In 14K Yellow Gold",
-    price: 65999,
+    title: "Lab-Grown Diamond Initial R Pendant Necklace",
+    price: formatINR(65999),
+    discount_percent: 5,
+    discount_price: formatINR(Math.round(65999 - 65999 * 0.05)),
     description: "Nourishing lip balm to protect and hydrate lips.",
     category: "jewelery",
-    image: ["/assets/prd-img/necklace/1.jpg", "/assets/prd-img/necklace/2.jpg"],
+    colors: ["#FFD700", "#C0C0C0"], // gold, silver
+    image: [
+      "/assets/prd-img/necklace/1.jpg",
+      "/assets/prd-img/necklace/2.jpg",
+    ],
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 4,
     brand: "MAC",
     title: "M·A·Cximal Silky Matte Lipstick",
-    price: 2600,
-    description:
-      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    price: formatINR(2600),
+    discount_percent: 5,
+    discount_price: formatINR(Math.round(2600 - 2600 * 0.05)),
+    description: "Silky Matte Finish, 12HR Comfortable Wear.",
     category: "cosmetics",
+    colors: ["#B22222", "#A52A2A", "#8B0000"], // red family
     image: [
       "/assets/prd-img/lipstick/mac1.avif",
       "/assets/prd-img/lipstick/mac2.avif",
@@ -403,14 +707,17 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 5,
     brand: "MAC",
-    title: "Lady Danger,M·A·Cximal Silky Matte Lipstick",
-    price: 2600,
-    description:
-      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    title: "Lady Danger – Silky Matte Lipstick",
+    price: formatINR(2600),
+    discount_percent: 5,
+    discount_price: formatINR(Math.round(2600 - 2600 * 0.05)),
+    description: "Silky Matte Finish, 12HR Comfortable Wear.",
     category: "cosmetics",
+    colors: ["#FF6347", "#FF4500", "#E34234"], // orange-red shades
     image: [
       "/assets/prd-img/lipstick/lady-danger1.avif",
       "/assets/prd-img/lipstick/lady-danger2.avif",
@@ -419,14 +726,17 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 6,
     brand: "MAC",
-    title: "Russian Red,M·A·Cximal Silky Matte Lipstick",
-    price: 2600,
-    description:
-      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    title: "Russian Red – Silky Matte Lipstick",
+    price: formatINR(2600),
+    discount_percent: 5,
+    discount_price: formatINR(Math.round(2600 - 2600 * 0.05)),
+    description: "Silky Matte Finish, 12HR Comfortable Wear.",
     category: "cosmetics",
+    colors: ["#8B0000", "#A52A2A", "#B22222"], // deep red
     image: [
       "/assets/prd-img/lipstick/russian-red1.avif",
       "/assets/prd-img/lipstick/russian-red2.avif",
@@ -435,15 +745,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 7,
     brand: "FROGS",
-    title:
-      "MACGROW - Light Blue Denim Straight Fit Women's Jeans ( Pack of 1 )",
-    price: 443,
-    description:
-      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    title: "Light Blue Denim Straight Fit Women's Jeans",
+    price: formatINR(443),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(443 - 443 * 0.1)),
+    description: "Straight Fit Women's Jeans",
     category: "women's clothing",
+    colors: ["#87CEEB", "#4682B4"], // denim blue
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/women-jean/blue1.webp",
       "/assets/prd-img/women-jean/blue2.webp",
@@ -452,14 +765,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 8,
     brand: "Bewkoof",
-    title: "BONDY Women's Straight Fit Mid-Rise Jeans ( Black )",
-    price: 443,
-    description:
-      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    title: "Women's Straight Fit Mid-Rise Jeans (Black)",
+    price: formatINR(443),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(443 - 443 * 0.1)),
+    description: "Mid rise black jeans.",
     category: "women's clothing",
+    colors: ["#000000", "#333333"], // black variants
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/women-jean/black1.webp",
       "/assets/prd-img/women-jean/black2.webp",
@@ -468,14 +785,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 9,
     brand: "Bewkoof",
-    title: "9x denims Women's Regular Fit Mid-Rise Jeans ( Cream )",
-    price: 670,
-    description:
-      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    title: "Women's Regular Fit Mid-Rise Jeans (Cream)",
+    price: formatINR(670),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(670 - 670 * 0.1)),
+    description: "Cream mid-rise jeans.",
     category: "women's clothing",
+    colors: ["#F5F5DC", "#FFFDD0"], // cream tones
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/women-jean/cream1.webp",
       "/assets/prd-img/women-jean/cream2.webp",
@@ -484,13 +805,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 10,
     brand: "Aurelia",
     title: "Navy Schiffli Short Kurti with Pintucks",
-    price: 883,
-    description: "Navy Schiffli Short Kurti with Pintucks",
+    price: formatINR(883),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(883 - 883 * 0.1)),
+    description: "Short Kurti with Pintucks.",
     category: "women's clothing",
+    colors: ["#000080", "#1E3A8A"], // navy blue
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/women-kurti/blue1.avif",
       "/assets/prd-img/women-kurti/blue2.avif",
@@ -499,15 +825,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 11,
     brand: "Janasya",
-    title:
-      "Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
-    price: 1995,
-    description:
-      "Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
+    title: "Lime Yellow Chikankari Embroidered Kurta",
+    price: formatINR(1995),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(1995 - 1995 * 0.1)),
+    description: "Pure cotton embroidered kurta.",
     category: "women's clothing",
+    colors: ["#FFF44F", "#EEDC82"], // yellow shades
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/women-kurti/yellow1.avif",
       "/assets/prd-img/women-kurti/yellow2.avif",
@@ -516,13 +845,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 12,
     brand: "Brownverse",
-    title: "Pure Cotton Women Off White Embroidered Kashmiri Kurti",
-    price: 1995,
-    description: "Pure Cotton Women Off White Embroidered Kashmiri Kurti.",
+    title: "Women Off White Embroidered Kashmiri Kurti",
+    price: formatINR(1995),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(1995 - 1995 * 0.1)),
+    description: "Off white embroidered kurti.",
     category: "women's clothing",
+    colors: ["#FAF9F6", "#F5F5F5"], // off-white
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/women-kurti/cream1.avif",
       "/assets/prd-img/women-kurti/cream2.avif",
@@ -531,13 +865,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 13,
     brand: "Style Quotient",
-    title: "Men Olive Relaxed Fit Mid Rise Cargos",
-    price: 1395,
-    description: "Men Olive Relaxed Fit Mid Rise Cargos",
+    title: "Men Olive Relaxed Fit Cargos",
+    price: formatINR(1395),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(1395 - 1395 * 0.1)),
+    description: "Relaxed fit cargos.",
     category: "men's clothing",
+    colors: ["#556B2F", "#808000"], // olive shades
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/men-jeans/green-cargo1.avif",
       "/assets/prd-img/men-jeans/green-cargo2.avif",
@@ -546,13 +885,18 @@ const products = [
     rating: { rate: 4.7, count: 105 },
     qty: 0,
   },
+
   {
     id: 14,
     brand: "Snitch",
     title: "Blue Denim Loose Casual Jeans",
-    price: 1595,
-    description: "Blue Denim Loose Casual Jeans",
+    price: formatINR(1595),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(1595 - 1595 * 0.1)),
+    description: "Loose fit casual jeans.",
     category: "men's clothing",
+    colors: ["#3B82F6", "#1E40AF"], // blue shade
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/men-jeans/blue1.avif",
       "/assets/prd-img/men-jeans/blue2.avif",
@@ -561,13 +905,18 @@ const products = [
     rating: { rate: 4.1, count: 545 },
     qty: 0,
   },
+
   {
     id: 15,
     brand: "FREAKINS",
     title: "Men Spruce Black Wide Jeans",
-    price: 1899,
-    description: "Men Spruce Black Wide Jeans",
+    price: formatINR(1899),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(1899 - 1899 * 0.1)),
+    description: "Wide black jeans.",
     category: "men's clothing",
+    colors: ["#000000", "#2B2B2B"],
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/men-jeans/black1.avif",
       "/assets/prd-img/men-jeans/black2.avif",
@@ -576,13 +925,18 @@ const products = [
     rating: { rate: 3.9, count: 95 },
     qty: 0,
   },
+
   {
     id: 16,
     brand: "American Eagle",
     title: "Men Red Super Soft Graphic Hoodie",
-    price: 1843,
-    description: "Men Red Super Soft Graphic Hoodie",
+    price: formatINR(1843),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(1843 - 1843 * 0.1)),
+    description: "Red soft hoodie.",
     category: "men's clothing",
+    colors: ["#FF0000", "#B22222"],
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/men-hoodie/red1.avif",
       "/assets/prd-img/men-hoodie/red2.avif",
@@ -591,13 +945,18 @@ const products = [
     rating: { rate: 4, count: 215 },
     qty: 0,
   },
+
   {
     id: 17,
     brand: "POLO RALPH LAUREN",
     title: "RALPH LAUREN Fleece Hoodie",
-    price: 14843,
-    description: "RALPH LAUREN Fleece Hoodie",
+    price: formatINR(14843),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(14843 - 14843 * 0.1)),
+    description: "Premium fleece hoodie.",
     category: "men's clothing",
+    colors: ["#000000", "#1A1A1A"], // black
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/men-hoodie/black1.avif",
       "/assets/prd-img/men-hoodie/black2.avif",
@@ -606,13 +965,18 @@ const products = [
     rating: { rate: 4.3, count: 76 },
     qty: 0,
   },
+
   {
     id: 18,
     brand: "ALLSAINTS",
     title: "Future Hoodie",
-    price: 31245,
-    description: "Future Hoodie",
+    price: formatINR(31245),
+    discount_percent: 10,
+    discount_price: formatINR(Math.round(31245 - 31245 * 0.1)),
+    description: "Premium quality hoodie.",
     category: "men's clothing",
+    colors: ["#E5E4E2", "#D3D3D3"], // cream/light grey
+    sizes: ["S", "M", "L", "XL"],
     image: [
       "/assets/prd-img/men-hoodie/cream1.avif",
       "/assets/prd-img/men-hoodie/cream2.avif",
@@ -622,6 +986,8 @@ const products = [
     qty: 0,
   },
 ];
+
+
 
 const App = () => {
   const [selectedCategories, setSelectedCategories] = useState("all");
