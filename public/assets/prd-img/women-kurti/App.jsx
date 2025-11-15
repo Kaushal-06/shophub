@@ -512,90 +512,6 @@ const products = [
     "rating":{"rate":4.7,"count":105},
     "qty":0
   },  
-  {
-    "id":13,
-    "title":"Style Quotient",
-    "price":1395,
-    "description":"Men Olive Relaxed Fit Mid Rise Cargos",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-jeans/green-cargo1.avif",
-      "/assets/prd-img/men-jeans/green-cargo2.avif",
-      "/assets/prd-img/men-jeans/green-cargo3.avif",
-    ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
-  {
-    "id":14,
-    "title":"Snitch",
-    "price":1595,
-    "description":"Blue Denim Loose Casual Jeans",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-jeans/blue1.avif",
-      "/assets/prd-img/men-jeans/blue2.avif",
-      "/assets/prd-img/men-jeans/blue3.avif",
-    ],
-    "rating":{"rate":4.1,"count":545},
-    "qty":0
-  },  
-  {
-    "id":15,
-    "title":"FREAKINS",
-    "price":1899,
-    "description":"Men Spruce Black Wide Jeans",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-jeans/black1.avif",
-      "/assets/prd-img/men-jeans/black2.avif",
-      "/assets/prd-img/men-jeans/black3.avif",
-    ],
-    "rating":{"rate":3.9,"count":95},
-    "qty":0
-  },  
-  {
-    "id":16,
-    "title":"American Eagle",
-    "price":1843,
-    "description":"Men Red Super Soft Graphic Hoodie",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-hoodie/red1.avif",
-      "/assets/prd-img/men-hoodie/red2.avif",
-      "/assets/prd-img/men-hoodie/red3.avif",
-    ],
-    "rating":{"rate":4,"count":215},
-    "qty":0
-  },  
-  {
-    "id":17,
-    "title":"POLO RALPH LAUREN",
-    "price":14843,
-    "description":"RALPH LAUREN Fleece Hoodie",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-hoodie/black1.avif",
-      "/assets/prd-img/men-hoodie/black2.avif",
-      "/assets/prd-img/men-hoodie/black3.avif",
-    ],
-    "rating":{"rate":4.3,"count":76},
-    "qty":0
-  },  
-  {
-    "id":18,
-    "title":"ALLSAINTS",
-    "price":31245,
-    "description":"uture Hoodie",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-hoodie/cream1.avif",
-      "/assets/prd-img/men-hoodie/cream2.avif",
-      "/assets/prd-img/men-hoodie/cream3.avif",
-    ],
-    "rating":{"rate":4.8,"count":14},
-    "qty":0
-  },  
 ]
 
 
@@ -749,7 +665,7 @@ const App = () => {
           selectedCategories={selectedCategories}
           handleCategoriesChange={handleCategoriesChange}
         />
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
           {filteredProducts.map((prd) => (
             <ProductCard
               key={prd.id}

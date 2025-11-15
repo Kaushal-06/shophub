@@ -14,11 +14,11 @@ const ProductImageSlider = ({ images }) => {
     },[images.length])
 
     return(
-         <div className="flex items-center justify-center w-full mt-2">
+         <div className="flex items-center justify-center w-full">
           <img
             src={images[currentIndex]}
             // alt={prd.title}
-            className="w-auto h-auto rounded-t-xl transition-opacity duration-500"
+            className="w-full aspect-square object-cover rounded-t-xl transition-opacity duration-500"
           />
         </div>
     )
