@@ -24,7 +24,7 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
         {/* main */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
           <div className="flex flex-col-reverse sm:flex-row items-center gap-2 h-full">
-            <div className="h-full flex flex-row items-center justify-center sm:flex-col gap-3 py-3">
+            <div className="h-full flex flex-row items-center justify-start sm:justify-center sm:flex-col gap-3 py-3">
               {prd.image?.map((i, index) => (
                 <div
                   key={index}
@@ -113,13 +113,13 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
             <div className="col-span-2 flex justify-between w-full gap-2 mt-2">
                <button 
                onClick={() => addToWishlist(prd)}
-               className="border border-gray-300 w-1/2 sm:w-1/3 flex items-center justify-center py-1.5 px-3 gap-2">
+               className="border border-gray-300 w-1/2 sm:w-1/3 flex items-center justify-center py-2 px-3 gap-2">
                 <HeartPlus className="w-4 h-4 sm:w-4 sm:h-4"/>
                 <span className="text-xs sm:text-sm font-semibold">Add To Wishlist</span>
                </button>
                <button 
                onClick={() => addToCart(prd)}
-               className="border border-gray-300 flex-1 flex items-center justify-center py-1.5 px-3 bg-black ">
+               className="border border-gray-300 flex-1 flex items-center justify-center py-2 px-3 bg-black ">
                 {/* <HeartPlus className="w-4 h-4"/> */}
                 <span className="text-xs sm:text-sm font-semibold text-white">Add to Bag</span>
                </button>
