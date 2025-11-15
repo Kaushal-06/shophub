@@ -1,8 +1,10 @@
-import { X } from "lucide-react";
+import { HeartPlus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const ProductModal = ({ isOpen, onClose, prd }) => {
-    const [currImg, setCurrImg] = useState("");
+const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
+  const [currImg, setCurrImg] = useState("");
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
 
   // Reset image when product changes
   useEffect(() => {
@@ -20,13 +22,15 @@ const ProductModal = ({ isOpen, onClose, prd }) => {
         </button>
 
         {/* main */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col-reverse sm:flex-row items-center gap-2 h-full">
             <div className="h-full flex flex-row items-center justify-center sm:flex-col gap-3 py-3">
               {prd.image?.map((i, index) => (
                 <div
                   key={index}
-                  className={` ${currImg === i ? 'border border-gray-800 shadow-2xl' : ''}  rounded w-16 sm:w-28 h-16 sm:h-28`}
+                  className={` ${
+                    currImg === i ? "border border-gray-800 shadow-lg" : ""
+                  }  rounded w-16 sm:w-28 h-16 sm:h-28`}
                   onClick={() => setCurrImg(i)}
                 >
                   <img src={i} alt={i} className="w-full h-full rounded" />
@@ -40,6 +44,83 @@ const ProductModal = ({ isOpen, onClose, prd }) => {
                 alt={currImg}
                 className="w-full h-full object-cover"
               />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-y-2 gap-x-3 py-2 px-2 auto-rows-min">
+            <div className="col-span-2">
+              <h3 className="text-lg text-blue-500 font-medium tracking-wider hidden sm:block">
+                Trending
+              </h3>
+              <h4 className="text-lg font-semibold">{prd.brand}</h4>
+              <p className="text-sm text-gray-500">{prd.title}</p>
+            </div>
+
+            <div className="col-span-2">
+              <div className="flex gap-2 items-center">
+                <h2 className="text-xl font-bold">{prd.discount_price}</h2>
+                <span className="text-lg text-green-600 mt-1">
+                  {prd.discount_percent}%
+                </span>
+                <span className="text-lg text-green-600 font-semibold mt-1">
+                  Off
+                </span>
+              </div>
+              <p className="mt-.5 text-gray-400 text-xs">MRP <span className="line-through">{prd.price}</span> Inclusive of all taxes</p>
+            </div>
+
+            <div className="col-span-2">
+              <hr className="text-gray-300" />
+            </div>
+
+            {(prd?.sizes?.length > 0 || prd?.colors?.length > 0) && (
+              <div className="col-span-2 flex flex-col mt-2 space-y-2">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-bold">Select Size & Colour</h3>
+                </div>
+
+                <div className="flex justify-between">
+                  {/* Sizes */}
+                  <div className="flex gap-2 flex-wrap">
+                    {prd?.sizes?.map((s, index) => (
+                      <button
+                        key={index}
+                        className={`border ${selectedSize === s ? "border-gray-700 bg-gray-200" : "border-gray-300" }  rounded-full px-3 py-1 text-gray-700 cursor-pointer`}
+                        onClick={() => setSelectedSize(s)}
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Colors */}
+                  <div className="flex gap-2 flex-wrap">
+                    {prd?.colors?.map((c, index) => (
+                      <button
+                        key={index}
+                        style={{ backgroundColor: c }}
+                        className="w-6 h-6 rounded-full border border-gray-400 cursor-pointer"
+                         onClick={() => setSelectedColor(c)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="col-span-2 flex justify-between w-full gap-2 mt-2">
+               <button 
+               onClick={() => addToWishlist(prd)}
+               className="border border-gray-300 w-1/3 flex items-center justify-center py-1.5 px-3 gap-2">
+                <HeartPlus className="w-4 h-4"/>
+                <span className="text-sm font-semibold">Add To Wishlist</span>
+               </button>
+               <button 
+               onClick={() => addToCart(prd)}
+               className="border border-gray-300 flex-1 flex items-center justify-center py-1.5 px-3 bg-black ">
+                {/* <HeartPlus className="w-4 h-4"/> */}
+                <span className="text-sm font-semibold text-white">Add to Bag</span>
+               </button>
             </div>
           </div>
         </div>

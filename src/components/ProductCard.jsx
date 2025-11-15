@@ -81,7 +81,7 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
         </div>
       </div>
 
-      <ProductModal isOpen={modal} onClose={() => setModal(false)} prd={selectProduct} />
+      <ProductModal isOpen={modal} onClose={() => setModal(false)} prd={selectProduct} addToCart={addItemToCart} addToWishlist={addItemToWishlist} />
     </div>
   );
 };

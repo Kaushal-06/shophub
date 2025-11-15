@@ -67,7 +67,7 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
 
                     <div className="flex-1">
                      <h4 className="font-semibold text-sm line-clamp-2">{item.title}</h4>
-                     <p className="text-blue-600 font-bold mt-1">${item.price}</p>
+                     <p className="text-blue-600 font-bold mt-1">{item.discount_price}</p>
 
                      <div className="flex items-center justify-between mt-2">
                        <div className="flex items-center gap-2 bg-white rounded-lg border">

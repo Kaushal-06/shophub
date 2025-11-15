@@ -940,7 +940,7 @@ const products = [
     image: [
       "/assets/prd-img/men-hoodie/red1.avif",
       "/assets/prd-img/men-hoodie/red2.avif",
-      "/assets/prd-img/men-hoodie/red3.avif",
+      // "/assets/prd-img/men-hoodie/red3.avif",
     ],
     rating: { rate: 4, count: 215 },
     qty: 0,
@@ -958,7 +958,7 @@ const products = [
     colors: ["#000000", "#1A1A1A"], // black
     sizes: ["S", "M", "L", "XL"],
     image: [
-      "/assets/prd-img/men-hoodie/black1.avif",
+      "/assets/prd-img/men-hoodie/black.avif",
       "/assets/prd-img/men-hoodie/black2.avif",
       "/assets/prd-img/men-hoodie/black3.avif",
     ],
