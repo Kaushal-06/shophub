@@ -4,6 +4,7 @@ import FilterCard from "./components/FilterCard";
 import ProductCard from "./components/ProductCard";
 import CartSidebar from "./components/CartSidebar";
 import Toast from "./components/Toast";
+import ProductCardSkeleton from "./components/ProductCardSkeleton";
 
 // const products = [
 //   {
@@ -263,341 +264,364 @@ import Toast from "./components/Toast";
 
 const products1 = [
   {
-    "id": 21,
-    "title": "Red Lipstick",
-    "price": 15.99,
-    "description": "Classic red lipstick for bold and elegant look.",
-    "category": "cosmetics",
-    "image": [
+    id: 21,
+    title: "Red Lipstick",
+    price: 15.99,
+    description: "Classic red lipstick for bold and elegant look.",
+    category: "cosmetics",
+    image: [
       "https://cdn.netmeds.tech/v2/plain-cake-860195/netmed/wrkr/products/assets/item/free/resize-w:400/n-cg2U0-3Z-avon_ultra_perfectly_matte_lipstick_truest_red_4_gm_656815_0_1.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/22/22/39/lip-balm-1853527_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2016/11/22/22/39/lip-balm-1853527_960_720.jpg",
     ],
-    "rating": { "rate": 4.8, "count": 238 },
-    "qty": 0
+    rating: { rate: 4.8, count: 238 },
+    qty: 0,
   },
   {
-    "id": 22,
-    "title": "Pink Lip Balm",
-    "price": 7.99,
-    "description": "Hydrating lip balm with natural pink tint.",
-    "category": "cosmetics",
-    "image": [
+    id: 22,
+    title: "Pink Lip Balm",
+    price: 7.99,
+    description: "Hydrating lip balm with natural pink tint.",
+    category: "cosmetics",
+    image: [
       "https://th.bing.com/th/id/OPAC.i98H9pOH3fihCg474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1&ucfimg=1",
-      "https://cdn.pixabay.com/photo/2016/03/05/22/12/lip-gloss-1238296_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2016/03/05/22/12/lip-gloss-1238296_960_720.jpg",
     ],
-    "rating": { "rate": 4.5, "count": 123 },
-    "qty": 0
+    rating: { rate: 4.5, count: 123 },
+    qty: 0,
   },
   {
-    "id": 23,
-    "title": "Silver Ring with Gemstone",
-    "price": 45.5,
-    "description": "Elegant silver ring with a sparkling gemstone.",
-    "category": "jewelery",
-    "image": [
+    id: 23,
+    title: "Silver Ring with Gemstone",
+    price: 45.5,
+    description: "Elegant silver ring with a sparkling gemstone.",
+    category: "jewelery",
+    image: [
       "https://tse1.explicit.bing.net/th/id/OIP.HfOdKNhkFY0ppFX9igbRmAHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
-      "https://cdn.pixabay.com/photo/2016/06/22/10/57/silver-1475132_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2016/06/22/10/57/silver-1475132_960_720.jpg",
     ],
-    "rating": { "rate": 4.7, "count": 198 },
-    "qty": 0
+    rating: { rate: 4.7, count: 198 },
+    qty: 0,
   },
   {
-    "id": 24,
-    "title": "Gold Pendant Necklace",
-    "price": 120,
-    "description": "Delicate gold pendant necklace for everyday elegance.",
-    "category": "jewelery",
-    "image": [
+    id: 24,
+    title: "Gold Pendant Necklace",
+    price: 120,
+    description: "Delicate gold pendant necklace for everyday elegance.",
+    category: "jewelery",
+    image: [
       "https://th.bing.com/th/id/OIP.LAsHsq3AqTO1h6_1JjfBzwHaHa?w=201&h=201&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1",
-      "https://cdn.pixabay.com/photo/2016/03/27/20/50/necklace-1284303_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2016/03/27/20/50/necklace-1284303_960_720.jpg",
     ],
-    "rating": { "rate": 4.9, "count": 176 },
-    "qty": 0
+    rating: { rate: 4.9, count: 176 },
+    qty: 0,
   },
   {
-    "id": 25,
-    "title": "Diamond Stud Earrings",
-    "price": 150,
-    "description": "Classic diamond stud earrings for a timeless look.",
-    "category": "jewelery",
-    "image": [
+    id: 25,
+    title: "Diamond Stud Earrings",
+    price: 150,
+    description: "Classic diamond stud earrings for a timeless look.",
+    category: "jewelery",
+    image: [
       "https://th.bing.com/th/id/OIP.aIZSC4YgsTua211lDgYYrgHaHa?w=211&h=211&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1",
-      "https://cdn.pixabay.com/photo/2017/01/20/00/30/diamond-1996647_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2017/01/20/00/30/diamond-1996647_960_720.jpg",
     ],
-    "rating": { "rate": 4.8, "count": 210 },
-    "qty": 0
+    rating: { rate: 4.8, count: 210 },
+    qty: 0,
   },
   {
-    "id": 26,
-    "title": "Nude Lipstick",
-    "price": 13.5,
-    "description": "Smooth nude lipstick perfect for daily wear.",
-    "category": "cosmetics",
-    "image": [
+    id: 26,
+    title: "Nude Lipstick",
+    price: 13.5,
+    description: "Smooth nude lipstick perfect for daily wear.",
+    category: "cosmetics",
+    image: [
       "https://th.bing.com/th/id/OIP.mIU8g-jUK4VPbc_fz5GEWQHaFj?w=232&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1",
-      "https://cdn.pixabay.com/photo/2015/12/08/00/27/lipstick-1082375_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2015/12/08/00/27/lipstick-1082375_960_720.jpg",
     ],
-    "rating": { "rate": 4.6, "count": 175 },
-    "qty": 0
+    rating: { rate: 4.6, count: 175 },
+    qty: 0,
   },
-]
-
+];
 
 const products = [
   {
-    "id":1,
-    "title":"Wedding Ring In 18K Yellow Gold (2.00mm)",
-    "price":5.99,
-    "description":"Nourishing lip balm to protect and hydrate lips.",
-    "category":"jewelery",
-    "image":[
+    id: 1,
+    brand: "Blueline",
+    title: "Wedding Ring In 18K Yellow Gold (2.00mm)",
+    price: 32500,
+    description: "Nourishing lip balm to protect and hydrate lips.",
+    category: "jewelery",
+    image: [
       "/assets/prd-img/ring/1.jpg",
       "/assets/prd-img/ring/2.jpg",
       "/assets/prd-img/ring/3.jpg",
-      "/assets/prd-img/ring/4.jpg"
+      "/assets/prd-img/ring/4.jpg",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":2,
-    "title":"Inside Out Round Hoops, 1/2 Inch Diameter In 14K Yellow Gold (1/4 Ct. tw. - H-I / SI1-SI2)",
-    "price":1027,
-    "description":"Nourishing lip balm to protect and hydrate lips.",
-    "category":"jewelery",
-    "image":[
+    id: 2,
+    brand: "Blueline",
+    title:
+      "Inside Out Round Hoops, 1/2 Inch Diameter In 14K Yellow Gold (1/4 Ct. tw. - H-I / SI1-SI2)",
+    price: 22450,
+    description: "Nourishing lip balm to protect and hydrate lips.",
+    category: "jewelery",
+    image: [
       "/assets/prd-img/earring/1.jpg",
       "/assets/prd-img/earring/2.jpg",
-      "/assets/prd-img/earring/3.jpg"
+      "/assets/prd-img/earring/3.jpg",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":3,
-    "title":"Lab-Grown Diamond Initial R Pendant Necklace In 14K Yellow Gold",
-    "price":768,
-    "description":"Nourishing lip balm to protect and hydrate lips.",
-    "category":"jewelery",
-    "image":[
-      "/assets/prd-img/necklace/1.jpg",
-      "/assets/prd-img/necklace/2.jpg",
-    ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    id: 3,
+    brand: "Blueline",
+    title: "Lab-Grown Diamond Initial R Pendant Necklace In 14K Yellow Gold",
+    price: 65999,
+    description: "Nourishing lip balm to protect and hydrate lips.",
+    category: "jewelery",
+    image: ["/assets/prd-img/necklace/1.jpg", "/assets/prd-img/necklace/2.jpg"],
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":4,
-    "title":"M·A·Cximal Silky Matte Lipstick",
-    "price":2600,
-    "description":"Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
-    "category":"cosmetics",
-    "image":[
+    id: 4,
+    brand: "MAC",
+    title: "M·A·Cximal Silky Matte Lipstick",
+    price: 2600,
+    description:
+      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    category: "cosmetics",
+    image: [
       "/assets/prd-img/lipstick/mac1.avif",
       "/assets/prd-img/lipstick/mac2.avif",
       "/assets/prd-img/lipstick/mac3.webp",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":5,
-    "title":"Lady Danger,M·A·Cximal Silky Matte Lipstick",
-    "price":2600,
-    "description":"Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
-    "category":"cosmetics",
-    "image":[
+    id: 5,
+    brand: "MAC",
+    title: "Lady Danger,M·A·Cximal Silky Matte Lipstick",
+    price: 2600,
+    description:
+      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    category: "cosmetics",
+    image: [
       "/assets/prd-img/lipstick/lady-danger1.avif",
       "/assets/prd-img/lipstick/lady-danger2.avif",
       "/assets/prd-img/lipstick/lady-danger3.webp",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":6,
-    "title":"Russian Red,M·A·Cximal Silky Matte Lipstick",
-    "price":2600,
-    "description":"Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
-    "category":"cosmetics",
-    "image":[
+    id: 6,
+    brand: "MAC",
+    title: "Russian Red,M·A·Cximal Silky Matte Lipstick",
+    price: 2600,
+    description:
+      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    category: "cosmetics",
+    image: [
       "/assets/prd-img/lipstick/russian-red1.avif",
       "/assets/prd-img/lipstick/russian-red2.avif",
       "/assets/prd-img/lipstick/russian-red3.webp",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":7,
-    "title":"MACGROW - Light Blue Denim Straight Fit Women's Jeans ( Pack of 1 )",
-    "price":443,
-    "description":"Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
-    "category":"women's clothing",
-    "image":[
+    id: 7,
+    brand: "FROGS",
+    title:
+      "MACGROW - Light Blue Denim Straight Fit Women's Jeans ( Pack of 1 )",
+    price: 443,
+    description:
+      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    category: "women's clothing",
+    image: [
       "/assets/prd-img/women-jean/blue1.webp",
       "/assets/prd-img/women-jean/blue2.webp",
       "/assets/prd-img/women-jean/blue3.webp",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":8,
-    "title":"BONDY Women's Straight Fit Mid-Rise Jeans ( Black )",
-    "price":443,
-    "description":"Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
-    "category":"women's clothing",
-    "image":[
+    id: 8,
+    brand: "Bewkoof",
+    title: "BONDY Women's Straight Fit Mid-Rise Jeans ( Black )",
+    price: 443,
+    description:
+      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    category: "women's clothing",
+    image: [
       "/assets/prd-img/women-jean/black1.webp",
       "/assets/prd-img/women-jean/black2.webp",
       "/assets/prd-img/women-jean/black3.webp",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":9,
-    "title":"9x denims Women's Regular Fit Mid-Rise Jeans ( Cream )",
-    "price":670,
-    "description":"Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
-    "category":"women's clothing",
-    "image":[
-       "/assets/prd-img/women-jean/cream1.webp",
+    id: 9,
+    brand: "Bewkoof",
+    title: "9x denims Women's Regular Fit Mid-Rise Jeans ( Cream )",
+    price: 670,
+    description:
+      "Silky Matte Finish, 12HR Comfortable Wear. Pigment-Rich/Full-Coverage Colour.",
+    category: "women's clothing",
+    image: [
+      "/assets/prd-img/women-jean/cream1.webp",
       "/assets/prd-img/women-jean/cream2.webp",
       "/assets/prd-img/women-jean/cream3.webp",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":10,
-    "title":"Aurelia",
-    "price":883,
-    "description":"Navy Schiffli Short Kurti with Pintucks",
-    "category":"women's clothing",
-    "image":[
-       "/assets/prd-img/women-kurti/blue1.avif",
+    id: 10,
+    brand: "Aurelia",
+    title: "Navy Schiffli Short Kurti with Pintucks",
+    price: 883,
+    description: "Navy Schiffli Short Kurti with Pintucks",
+    category: "women's clothing",
+    image: [
+      "/assets/prd-img/women-kurti/blue1.avif",
       "/assets/prd-img/women-kurti/blue2.avif",
       "/assets/prd-img/women-kurti/blue3.avif",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":11,
-    "title":"Janasya",
-    "price":1995,
-    "description":"Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
-    "category":"women's clothing",
-    "image":[
-       "/assets/prd-img/women-kurti/yellow1.avif",
+    id: 11,
+    brand: "Janasya",
+    title:
+      "Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
+    price: 1995,
+    description:
+      "Womens Lime Yellow Pure Cotton Ombre Chikankari Embroidered Straight Kurta",
+    category: "women's clothing",
+    image: [
+      "/assets/prd-img/women-kurti/yellow1.avif",
       "/assets/prd-img/women-kurti/yellow2.avif",
       "/assets/prd-img/women-kurti/yellow3.avif",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":12,
-    "title":"Brownverse",
-    "price":1995,
-    "description":"Pure Cotton Women Off White Embroidered Kashmiri Kurti.",
-    "category":"women's clothing",
-    "image":[
-       "/assets/prd-img/women-kurti/cream1.avif",
+    id: 12,
+    brand: "Brownverse",
+    title: "Pure Cotton Women Off White Embroidered Kashmiri Kurti",
+    price: 1995,
+    description: "Pure Cotton Women Off White Embroidered Kashmiri Kurti.",
+    category: "women's clothing",
+    image: [
+      "/assets/prd-img/women-kurti/cream1.avif",
       "/assets/prd-img/women-kurti/cream2.avif",
       "/assets/prd-img/women-kurti/cream3.avif",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":13,
-    "title":"Style Quotient",
-    "price":1395,
-    "description":"Men Olive Relaxed Fit Mid Rise Cargos",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-jeans/green-cargo1.avif",
+    id: 13,
+    brand: "Style Quotient",
+    title: "Men Olive Relaxed Fit Mid Rise Cargos",
+    price: 1395,
+    description: "Men Olive Relaxed Fit Mid Rise Cargos",
+    category: "men's clothing",
+    image: [
+      "/assets/prd-img/men-jeans/green-cargo1.avif",
       "/assets/prd-img/men-jeans/green-cargo2.avif",
       "/assets/prd-img/men-jeans/green-cargo3.avif",
     ],
-    "rating":{"rate":4.7,"count":105},
-    "qty":0
-  },  
+    rating: { rate: 4.7, count: 105 },
+    qty: 0,
+  },
   {
-    "id":14,
-    "title":"Snitch",
-    "price":1595,
-    "description":"Blue Denim Loose Casual Jeans",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-jeans/blue1.avif",
+    id: 14,
+    brand: "Snitch",
+    title: "Blue Denim Loose Casual Jeans",
+    price: 1595,
+    description: "Blue Denim Loose Casual Jeans",
+    category: "men's clothing",
+    image: [
+      "/assets/prd-img/men-jeans/blue1.avif",
       "/assets/prd-img/men-jeans/blue2.avif",
       "/assets/prd-img/men-jeans/blue3.avif",
     ],
-    "rating":{"rate":4.1,"count":545},
-    "qty":0
-  },  
+    rating: { rate: 4.1, count: 545 },
+    qty: 0,
+  },
   {
-    "id":15,
-    "title":"FREAKINS",
-    "price":1899,
-    "description":"Men Spruce Black Wide Jeans",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-jeans/black1.avif",
+    id: 15,
+    brand: "FREAKINS",
+    title: "Men Spruce Black Wide Jeans",
+    price: 1899,
+    description: "Men Spruce Black Wide Jeans",
+    category: "men's clothing",
+    image: [
+      "/assets/prd-img/men-jeans/black1.avif",
       "/assets/prd-img/men-jeans/black2.avif",
       "/assets/prd-img/men-jeans/black3.avif",
     ],
-    "rating":{"rate":3.9,"count":95},
-    "qty":0
-  },  
+    rating: { rate: 3.9, count: 95 },
+    qty: 0,
+  },
   {
-    "id":16,
-    "title":"American Eagle",
-    "price":1843,
-    "description":"Men Red Super Soft Graphic Hoodie",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-hoodie/red1.avif",
+    id: 16,
+    brand: "American Eagle",
+    title: "Men Red Super Soft Graphic Hoodie",
+    price: 1843,
+    description: "Men Red Super Soft Graphic Hoodie",
+    category: "men's clothing",
+    image: [
+      "/assets/prd-img/men-hoodie/red1.avif",
       "/assets/prd-img/men-hoodie/red2.avif",
       "/assets/prd-img/men-hoodie/red3.avif",
     ],
-    "rating":{"rate":4,"count":215},
-    "qty":0
-  },  
+    rating: { rate: 4, count: 215 },
+    qty: 0,
+  },
   {
-    "id":17,
-    "title":"POLO RALPH LAUREN",
-    "price":14843,
-    "description":"RALPH LAUREN Fleece Hoodie",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-hoodie/black1.avif",
+    id: 17,
+    brand: "POLO RALPH LAUREN",
+    title: "RALPH LAUREN Fleece Hoodie",
+    price: 14843,
+    description: "RALPH LAUREN Fleece Hoodie",
+    category: "men's clothing",
+    image: [
+      "/assets/prd-img/men-hoodie/black1.avif",
       "/assets/prd-img/men-hoodie/black2.avif",
       "/assets/prd-img/men-hoodie/black3.avif",
     ],
-    "rating":{"rate":4.3,"count":76},
-    "qty":0
-  },  
+    rating: { rate: 4.3, count: 76 },
+    qty: 0,
+  },
   {
-    "id":18,
-    "title":"ALLSAINTS",
-    "price":31245,
-    "description":"uture Hoodie",
-    "category":"men's clothing",
-    "image":[
-       "/assets/prd-img/men-hoodie/cream1.avif",
+    id: 18,
+    brand: "ALLSAINTS",
+    title: "Future Hoodie",
+    price: 31245,
+    description: "Future Hoodie",
+    category: "men's clothing",
+    image: [
+      "/assets/prd-img/men-hoodie/cream1.avif",
       "/assets/prd-img/men-hoodie/cream2.avif",
       "/assets/prd-img/men-hoodie/cream3.avif",
     ],
-    "rating":{"rate":4.8,"count":14},
-    "qty":0
-  },  
-]
-
+    rating: { rate: 4.8, count: 14 },
+    qty: 0,
+  },
+];
 
 const App = () => {
   const [selectedCategories, setSelectedCategories] = useState("all");
@@ -605,7 +629,16 @@ const App = () => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   //  useEffect(() => {
   //   const handleContextMenu = (e) => {
@@ -654,14 +687,13 @@ const App = () => {
   // ];
 
   const categories = [
-  "all",
-  "cosmetics",
-  "electronics",
-  "jewelery",
-  "men's clothing",
-  "women's clothing"
-]
-
+    "all",
+    "cosmetics",
+    "electronics",
+    "jewelery",
+    "men's clothing",
+    "women's clothing",
+  ];
 
   // const products = [
   //   { id: 1, name: 'Wireless Headphones', price: 89.99, category: 'electronics', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop', rating: 4.5, reviews: 124 },
@@ -707,7 +739,7 @@ const App = () => {
       setCart((prev) => [...prev, { ...prd, qty: 1 }]);
     }
 
-    setMessage(`${prd.title} added to cart!`)
+    setMessage(`${prd.title} added to cart!`);
   };
 
   const removeItem = (id) => {
@@ -731,12 +763,11 @@ const App = () => {
   const onClose = () => setIsCartOpen(false);
 
   const onToastClose = () => {
-    setMessage('')
-  }
+    setMessage("");
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
-   
       <Header
         wishlist={wishlist}
         cart={cart}
@@ -750,15 +781,24 @@ const App = () => {
           handleCategoriesChange={handleCategoriesChange}
         />
         <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 mb-4">
-          {filteredProducts.map((prd) => (
-            <ProductCard
-              key={prd.id}
-              prd={prd}
-              wishlist={wishlist}
-              addItemToWishlist={addItemToWishlist}
-              addItemToCart={addItemToCart}
-            />
-          ))}
+          {loading ? (
+            <>
+              <ProductCardSkeleton />
+              <ProductCardSkeleton />
+              <ProductCardSkeleton />
+              <ProductCardSkeleton />
+            </>
+          ) : (
+            filteredProducts.map((prd) => (
+              <ProductCard
+                key={prd.id}
+                prd={prd}
+                wishlist={wishlist}
+                addItemToWishlist={addItemToWishlist}
+                addItemToCart={addItemToCart}
+              />
+            ))
+          )}
         </div>
       </main>
 
@@ -770,20 +810,12 @@ const App = () => {
         updateQty={updateQty}
       />
 
-      {
-        message && (
-          <Toast
-          message={message}
-          onClose={onToastClose}
-          />
-        )
-      }
+      {message && <Toast message={message} onClose={onToastClose} />}
     </div>
   );
 };
 
 export default App;
-
 
 // import React from 'react'
 
