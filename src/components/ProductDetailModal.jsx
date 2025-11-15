@@ -16,13 +16,13 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
       {/* Modal box */}
-      <div className="bg-white rounded-xl shadow-lg w-11/12 md:max-w-5xl p-6 relative animate-fadeIn">
+      <div className="bg-white rounded-xl shadow-lg w-11/12 md:max-w-5xl p-3 sm:p-6 relative animate-fadeIn">
         <button onClick={onClose} className="absolute top-2 right-2">
           <X className="w-3 h-3 text-gray-700" />
         </button>
 
         {/* main */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
           <div className="flex flex-col-reverse sm:flex-row items-center gap-2 h-full">
             <div className="h-full flex flex-row items-center justify-center sm:flex-col gap-3 py-3">
               {prd.image?.map((i, index) => (
@@ -47,8 +47,8 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-1 gap-y-2 gap-x-3 py-2 px-2 auto-rows-min">
-            <div className="col-span-1 sm:col-span-2 -mt-10 sm:mt-0">
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-y-2 gap-x-3 sm:py-2 sm:px-2 p-1 auto-rows-min">
+            <div className="col-span-1 sm:col-span-2 -mt-6 sm:mt-0">
               <h3 className="text-lg text-blue-500 font-medium tracking-wider hidden sm:block">
                 Trending
               </h3>
@@ -56,8 +56,8 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
               <p className="text-[10px] sm:text-sm text-gray-500">{prd.title}</p>
             </div>
 
-            <div className="col-span-1 sm:col-span-2 -mt-10 sm:mt-0">
-              <div className="flex gap-2 items-center">
+            <div className="col-span-1 sm:col-span-2 -mt-6 sm:mt-0 flex flex-col">
+              <div className="flex gap-2 items-center justify-end sm:justify-start">
                 <h2 className="text-sm sm:text-xl font-bold">{prd.discount_price}</h2>
                 <span className="text-xs sm:text-lg text-green-600 mt-1">
                   {prd.discount_percent}%
@@ -66,7 +66,9 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
                   Off
                 </span>
               </div>
+              <div className="flex justify-end sm:justify-start">
               <p className="mt-.5 text-gray-400 text-[10px] sm:text-xs">MRP <span className="line-through">{prd.price}</span> Inclusive of all taxes</p>
+           </div>
             </div>
 
             <div className="col-span-2">
