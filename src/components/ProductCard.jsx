@@ -33,16 +33,21 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
         </div> */}
 
         <div className="py-2 px-3 flex flex-col gap-2">
-          <h2 className="text-sm sm:text-lg md:text-xl font-medium tracking-wide">
-            {prd.title.length > 20
-              ? prd.title.substring(0, 15) + "..."
-              : prd.title}
+          <h2 className="text-sm sm:text-md md:text-lg font-medium text-[#001325] tracking-tight">
+            {prd.brand}
           </h2>
+          <p className="text-[#192837] mb-0.5 -mt-1 font-normal text-xs sm:text-sm">
+            {prd.title.length > 20
+              ? prd.title.substring(0, 30) + "..."
+              : prd.title}
+          </p>
 
           <div className="flex items-center">
             <div className="flex items-center gap-1">
               <Star className="w-2 sm:w-4 h-4 sm:h-4 text-yellow-400 fill-yellow-400" />
-              <span className="text-xs sm:text-sm font-semibold">{prd.rating.rate}</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                {prd.rating.rate}
+              </span>
             </div>
 
             <p className="text-xs sm:text-sm text-gray-600 ml-2">
@@ -51,11 +56,13 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
           </div>
 
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-sm sm:text-xl md:text-2xl text-blue-600 ">₹{prd.price}</h1>
+            <h1 className="text-xs sm:text-sm md:text-xl text-green-600 ">
+              ₹{prd.price}
+            </h1>
 
             <button
               onClick={() => addItemToCart(prd)}
-              className="rounded-lg bg-gradient-to-r from-blue-400 via-indigo-600 to-purple-600 flex items-center py-1.5 sm:py-2 px-2 sm:px-4 text-white text-xs sm:text-md font-semobild cursor-pointer"
+              className="rounded-lg bg-gradient-to-r from-blue-400 via-indigo-600 to-purple-600 flex items-center py-1.5 sm:py-2 px-2 sm:px-4 text-white text-xs sm:text-sm font-semobild cursor-pointer"
             >
               Add to Cart
             </button>
