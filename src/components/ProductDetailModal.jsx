@@ -42,31 +42,31 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
               <img
                 src={currImg}
                 alt={currImg}
-                className="w-full h-full object-cover"
+                className="w-full h-64 sm:h-full object-cover"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-1 gap-y-2 gap-x-3 py-2 px-2 auto-rows-min">
-            <div className="col-span-2">
+            <div className="col-span-1 sm:col-span-2 -mt-10 sm:mt-0">
               <h3 className="text-lg text-blue-500 font-medium tracking-wider hidden sm:block">
                 Trending
               </h3>
-              <h4 className="text-lg font-semibold">{prd.brand}</h4>
-              <p className="text-sm text-gray-500">{prd.title}</p>
+              <h4 className="text-sm sm:text-lg font-semibold">{prd.brand}</h4>
+              <p className="text-[10px] sm:text-sm text-gray-500">{prd.title}</p>
             </div>
 
-            <div className="col-span-2">
+            <div className="col-span-1 sm:col-span-2 -mt-10 sm:mt-0">
               <div className="flex gap-2 items-center">
-                <h2 className="text-xl font-bold">{prd.discount_price}</h2>
-                <span className="text-lg text-green-600 mt-1">
+                <h2 className="text-sm sm:text-xl font-bold">{prd.discount_price}</h2>
+                <span className="text-xs sm:text-lg text-green-600 mt-1">
                   {prd.discount_percent}%
                 </span>
-                <span className="text-lg text-green-600 font-semibold mt-1">
+                <span className="text-xs sm:text-lg text-green-600 font-semibold mt-1">
                   Off
                 </span>
               </div>
-              <p className="mt-.5 text-gray-400 text-xs">MRP <span className="line-through">{prd.price}</span> Inclusive of all taxes</p>
+              <p className="mt-.5 text-gray-400 text-[10px] sm:text-xs">MRP <span className="line-through">{prd.price}</span> Inclusive of all taxes</p>
             </div>
 
             <div className="col-span-2">
@@ -76,7 +76,7 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
             {(prd?.sizes?.length > 0 || prd?.colors?.length > 0) && (
               <div className="col-span-2 flex flex-col mt-2 space-y-2">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold">Select Size & Colour</h3>
+                  <h3 className="text-sm sm:text-md md:text-lg font-bold">Select Size & Colour</h3>
                 </div>
 
                 <div className="flex justify-between">
@@ -85,7 +85,7 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
                     {prd?.sizes?.map((s, index) => (
                       <button
                         key={index}
-                        className={`border ${selectedSize === s ? "border-gray-700 bg-gray-200" : "border-gray-300" }  rounded-full px-3 py-1 text-gray-700 cursor-pointer`}
+                        className={`border ${selectedSize === s ? "border-gray-700 bg-gray-200" : "border-gray-300" }  rounded-full px-1.5 sm:px-3 py-.5 sm:py-1 text-gray-700 cursor-pointer`}
                         onClick={() => setSelectedSize(s)}
                       >
                         {s}
@@ -99,7 +99,7 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
                       <button
                         key={index}
                         style={{ backgroundColor: c }}
-                        className="w-6 h-6 rounded-full border border-gray-400 cursor-pointer"
+                        className="w-4 sm:w-6 h-4 sm:h-6 rounded-full border border-gray-400 cursor-pointer"
                          onClick={() => setSelectedColor(c)}
                       />
                     ))}
@@ -111,15 +111,15 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
             <div className="col-span-2 flex justify-between w-full gap-2 mt-2">
                <button 
                onClick={() => addToWishlist(prd)}
-               className="border border-gray-300 w-1/3 flex items-center justify-center py-1.5 px-3 gap-2">
-                <HeartPlus className="w-4 h-4"/>
-                <span className="text-sm font-semibold">Add To Wishlist</span>
+               className="border border-gray-300 w-1/2 sm:w-1/3 flex items-center justify-center py-1.5 px-3 gap-2">
+                <HeartPlus className="w-4 h-4 sm:w-4 sm:h-4"/>
+                <span className="text-xs sm:text-sm font-semibold">Add To Wishlist</span>
                </button>
                <button 
                onClick={() => addToCart(prd)}
                className="border border-gray-300 flex-1 flex items-center justify-center py-1.5 px-3 bg-black ">
                 {/* <HeartPlus className="w-4 h-4"/> */}
-                <span className="text-sm font-semibold text-white">Add to Bag</span>
+                <span className="text-xs sm:text-sm font-semibold text-white">Add to Bag</span>
                </button>
             </div>
           </div>
