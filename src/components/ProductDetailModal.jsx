@@ -18,7 +18,7 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
       {/* Modal box */}
       <div className="bg-white rounded-xl shadow-lg w-11/12 md:max-w-5xl p-3 sm:p-6 relative animate-fadeIn">
         <button onClick={onClose} className="absolute top-2 right-2">
-          <X className="w-3 h-3 text-gray-700" />
+          <X className="w-6 h-6 text-gray-700" />
         </button>
 
         {/* main */}
@@ -113,13 +113,13 @@ const ProductModal = ({ isOpen, onClose, prd, addToCart, addToWishlist }) => {
             <div className="col-span-2 flex justify-between w-full gap-2 mt-2">
                <button 
                onClick={() => addToWishlist(prd)}
-               className="border border-gray-300 w-1/2 sm:w-1/3 flex items-center justify-center py-2 px-3 gap-2">
+               className="border border-gray-300 w-1/2 sm:w-1/3 flex items-center justify-center py-2 px-3 gap-2 cursor-pointer">
                 <HeartPlus className="w-4 h-4 sm:w-4 sm:h-4"/>
                 <span className="text-xs sm:text-sm font-semibold">Add To Wishlist</span>
                </button>
                <button 
                onClick={() => addToCart(prd)}
-               className="border border-gray-300 flex-1 flex items-center justify-center py-2 px-3 bg-black ">
+               className="border border-gray-300 flex-1 flex items-center justify-center py-2 px-3 bg-black cursor-pointer">
                 {/* <HeartPlus className="w-4 h-4"/> */}
                 <span className="text-xs sm:text-sm font-semibold text-white">Add to Bag</span>
                </button>

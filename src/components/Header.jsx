@@ -11,13 +11,13 @@ const Header = ({wishlist, cart, handleCartClick}) => {
           </h1>
           <div className="flex gap-6">
             <div className="relative">
-              <Heart className="w-6 h-6 text-gray-600" />
+              <Heart className="w-6 h-6 text-gray-600 cursor-pointer" />
               { wishlist.length > 0 && <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">{wishlist.length}</span>}
               
             </div>
              
              <div className="relative">
-                <ShoppingCart className="w-6 h-6 text-gray-600" onClick={handleCartClick} />
+                <ShoppingCart className="w-6 h-6 text-gray-600 cursor-pointer" onClick={handleCartClick} />
                 {cart.length > 0 &&  <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full  w-5 h-5 flex items-center justify-center">{cart.length}</span>}
                
              </div>

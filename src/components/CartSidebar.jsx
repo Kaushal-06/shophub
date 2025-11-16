@@ -2,9 +2,11 @@ import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import React from "react";
 
 const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
+  // console.log(cart[0]?.price.slice(1).replace(',',''))
+  
   const calculateTotal = () => {
     return cart
-      .reduce((sum, item) => sum + item.price * item.qty, 0)
+      .reduce((sum, item) => sum + item.discount_price?.slice(1)?.replace(',','') * item.qty, 0)
       .toFixed(2);
   };
   return (
@@ -73,14 +75,14 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
                        <div className="flex items-center gap-2 bg-white rounded-lg border">
                         <button
                         onClick={() => updateQty(item.id, item.qty - 1)}
-                        className="p-1.5 hover:bg-gray-100 rounded-l-lg transition"
+                        className="p-1.5 hover:bg-gray-100 rounded-l-lg transition cursor-pointer"
                         >
                          <Minus className="w-3.5 h-3.5" />
                         </button>
                         <span className="text-sm font-semibold px-2">{item.qty}</span>
                         <button
                         onClick={() => updateQty(item.id, item.qty + 1)}
-                        className="p-1.5 hover:bg-gray-100 rounded-r-lg transition"
+                        className="p-1.5 hover:bg-gray-100 rounded-r-lg transition cursor-pointer"
                         >
                             <Plus className="w-3.5 h-3.5"/>
                         </button>
@@ -88,7 +90,7 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
 
                        <button
                        onClick={() => removeItem(item.id)}
-                       className="text-red-500 hover:text-red-700 hover:bg-red-50 p-2 rounded-full transition"
+                       className="text-red-500 hover:text-red-700 hover:bg-red-50 p-2 rounded-full transition cursor-pointer"
                        >
                         <Trash2 className="w-4 h-4"/>
                        </button>
@@ -107,7 +109,7 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Subtotal:</span>
-                    <span className="font-semibold">${calculateTotal()}</span>
+                    <span className="font-semibold">₹{calculateTotal()}</span>
                   </div> 
 
                   <div className="flex justify-between text-sm">
@@ -117,17 +119,17 @@ const CartSidebar = ({ isOpen, onClose, cart, updateQty ,removeItem }) => {
 
                   <div className="flex justify-between text-lg font-bold border-t pt-2">
                   <span>Total:</span>
-                  <span className="text-blue-600">${calculateTotal()}</span>
+                  <span className="text-blue-600">₹{calculateTotal()}</span>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition">
+                <button className="w-full bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition cursor-pointer">
                     Proceed to Checkout
                 </button>
 
                 <button
                 onClick={onClose}
-                className="w-full border-2 border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
+                className="w-full border-2 border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100 transition cursor-pointer"
                 >
                     Continue Shopping
                 </button>

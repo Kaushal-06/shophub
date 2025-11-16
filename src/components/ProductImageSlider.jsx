@@ -18,7 +18,7 @@ const ProductImageSlider = ({ images }) => {
           <img
             src={images[currentIndex]}
             // alt={prd.title}
-            className="w-full aspect-square object-cover rounded-t-xl transition-opacity duration-500"
+            className="w-full aspect-square object-cover rounded-t-xl transition-opacity duration-500 cursor-pointer"
           />
         </div>
     )

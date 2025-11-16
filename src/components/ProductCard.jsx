@@ -15,8 +15,8 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
   return (
     <div>
       <div className="bg-white shadow-lg rounded-xl flex flex-col relative w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2">
-        <span className="absolute left-2 top-2 rounded-full bg-blue-500 text-white font-semibold text-xs py-1 px-3">
-          {prd.category}
+        <span className="absolute left-2 top-2 rounded-full bg-blue-500 text-white font-semibold text-xs py-1 px-2">
+          {prd.category.charAt(0).toUpperCase() + prd.category.slice(1)}
         </span>
 
         <button
@@ -44,10 +44,10 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
         </div> */}
 
         <div className="py-2 px-3 flex flex-col gap-2">
-          <h2 className="text-sm sm:text-md md:text-lg font-medium text-[#001325] tracking-tight">
+          <h2 className="text-sm sm:text-md md:text-lg font-semibold text-[#001325] tracking-tight">
             {prd.brand}
           </h2>
-          <p className="text-[#192837] mb-0.5 -mt-1 font-normal text-xs sm:text-sm">
+          <p className="text-[#192837] mb-0.5 -mt-1 font-light text-xs sm:text-sm">
             {prd.title.length > 20
               ? prd.title.substring(0, 30) + "..."
               : prd.title}
@@ -55,7 +55,7 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
 
           <div className="flex items-center">
             <div className="flex items-center gap-1">
-              <Star className="w-2 sm:w-4 h-4 sm:h-4 text-yellow-400 fill-yellow-400" />
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
               <span className="text-xs sm:text-sm font-semibold">
                 {prd.rating.rate}
               </span>
@@ -67,8 +67,8 @@ const ProductCard = ({ prd, wishlist, addItemToWishlist, addItemToCart }) => {
           </div>
 
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-xs sm:text-sm md:text-xl text-green-600 ">
-              ₹{prd.price}
+            <h1 className="text-xs sm:text-sm md:text-xl text-green-600 font-bold">
+              {prd.price}
             </h1>
 
             <button
